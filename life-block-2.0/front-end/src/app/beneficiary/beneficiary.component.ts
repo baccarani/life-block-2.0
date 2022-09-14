@@ -3,7 +3,7 @@ import { Beneficiary } from '../models/beneficiary';
 import policy from '../policy';
 import { FormService } from '../services/form-services';
 import web3 from '../web3';
-
+const BN = require('bn.js');
 
 @Component({
   selector: 'app-beneficiary',
@@ -84,7 +84,7 @@ export class BeneficiaryComponent implements OnInit {
     stringArgs.push(policyInfo.streetAddress);
 
     // add initial premium payment coming from the policy form
-    numberArgs.push(policyInfo.initialPremiumPayment);
+    numberArgs.push(new BN(web3.utils.toWei(policyInfo.initialPremiumPayment)));
 
     // add string and number arguments coming from the beneficiary info
     for (let i = 0; i < beneficiaryInfo.length; i++) {

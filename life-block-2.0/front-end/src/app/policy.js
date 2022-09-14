@@ -1,55 +1,12 @@
 import web3 from './web3';
 
-const address = '0x4b81b3566d9A374B3DDDf60f8bdFB26d34492678';
+const address = '0xf008414678FCD8b0e4f54C02A08D0506B5c1B964';
 
 const abi = [
-	{
-		"inputs": [
-			{
-				"internalType": "string[]",
-				"name": "stringArgs",
-				"type": "string[]"
-			},
-			{
-				"internalType": "uint8[]",
-				"name": "numberArgs",
-				"type": "uint8[]"
-			},
-			{
-				"internalType": "address[]",
-				"name": "addressArgs",
-				"type": "address[]"
-			}
-		],
-		"name": "createPolicy",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "enter",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
 	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address payable",
-				"name": "_to",
-				"type": "address"
-			}
-		],
-		"name": "withdrawAll",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	},
 	{
 		"inputs": [
@@ -73,6 +30,36 @@ const abi = [
 			}
 		],
 		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string[]",
+				"name": "stringArgs",
+				"type": "string[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "numberArgs",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "address[]",
+				"name": "addressArgs",
+				"type": "address[]"
+			}
+		],
+		"name": "createPolicy",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "enter",
+		"outputs": [],
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -159,9 +146,9 @@ const abi = [
 								"type": "string"
 							},
 							{
-								"internalType": "uint8",
+								"internalType": "uint256",
 								"name": "allocation",
-								"type": "uint8"
+								"type": "uint256"
 							}
 						],
 						"internalType": "struct Policy.Beneficiary[]",
@@ -277,9 +264,9 @@ const abi = [
 								"type": "string"
 							},
 							{
-								"internalType": "uint8",
+								"internalType": "uint256",
 								"name": "allocation",
-								"type": "uint8"
+								"type": "uint256"
 							}
 						],
 						"internalType": "struct Policy.Beneficiary[]",
@@ -393,6 +380,19 @@ const abi = [
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_to",
+				"type": "address"
+			}
+		],
+		"name": "withdrawAll",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]

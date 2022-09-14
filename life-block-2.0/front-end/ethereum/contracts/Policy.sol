@@ -7,7 +7,7 @@ contract Policy {
         address recipient;
         string firstName;
         string lastName;
-        uint8 allocation;
+        uint256 allocation;
     }
 
     struct LifeInsurancePolicy {
@@ -34,7 +34,7 @@ contract Policy {
     }
     
     function enter() public payable {
-        require(msg.value >= .01 ether);
+        // require(msg.value >= .01 ether);
     }
     
     modifier restricted() {
@@ -46,13 +46,13 @@ contract Policy {
         return policies;
     }
 
-    function createPolicy(string[] memory stringArgs, uint8[] memory numberArgs, address[] memory addressArgs) public {
+    function createPolicy(string[] memory stringArgs, uint256[] memory numberArgs, address[] memory addressArgs) public {
         // initialize new policy
         policies.push();
         LifeInsurancePolicy storage newPolicy = policies[policies.length - 1];
 
         // create a new beneficiary object for each allocation, then update the beneficiaries array
-        for (uint i = 0; i < numberArgs.length; i++) {
+        for (uint i = 0; i < numberArgs.length - 1; i++) {
             Beneficiary memory beneficiary = Beneficiary({
                 recipient: addressArgs[i],
                 firstName: stringArgs[10 + 2 * i],
