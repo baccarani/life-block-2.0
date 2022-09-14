@@ -51,8 +51,14 @@ export class ReportComponent implements OnInit {
   }
 
   onSubmit = async () => {
+    
+    // start disabled button loading spinner
     this.isLoading = true;
+
+    // create death certificate report
     await report.methods.createReport(this.manager, this.deathForm.value.firstName, this.deathForm.value.lastName, this.deathForm.value.sin, this.deathForm.value.dateOfDeath, this.deathForm.value.city, this.deathForm.value.postalCode, this.deathForm.value.country, this.deathForm.value.province, this.deathForm.value.medicalCauseOfDeaths, this.deathForm.value.meansOfDeaths).send({ from: this.manager });
+    
+    // end disabled button loading spinner
     this.isLoading = false;
 
     if (this.deathForm.controls['meansOfDeaths'].value != 'Undetermined') {
