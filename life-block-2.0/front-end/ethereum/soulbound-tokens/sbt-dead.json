@@ -1,0 +1,27 @@
+{
+    "attributes": [
+        {
+            "trait_type": "NFT",
+            "value": "Soulbound"
+        },
+        {
+            "trait_type": "Asset",
+            "value": "Non-transferable Badge"
+        },
+        {
+            "trait_type": "Badge",
+            "value": "Minting First Soulbound Token"
+        },
+        {
+            "trait_type": "Type",
+            "value": "Demo"
+        },
+        {
+            "trait_type": "Insurance type",
+            "value": "Life insurance"
+        }
+    ],
+    "description": "This is a demo soulbound token mint",
+    "image": "https://gateway.pinata.cloud/ipfs/QmQT2CmcTKrgasKDS8KBEH5SSu2mxSpobEUZRfCUSZBPf1",
+    "name": "Death Certificate | Soulbound Token"
+}

@@ -1,0 +1,47 @@
+<mat-toolbar style="background-color: #202020;">
+<!-- <mat-toolbar color="primary"> -->
+    <button 
+    mat-icon-button class="example-icon" 
+    aria-label="Example icon-button with share icon" 
+    style="background-color: transparent; color: white"
+    [routerLink]="['/settings']"
+    (click)="onSettingsScreenClick()">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <button 
+    mat-icon-button class="example-icon" 
+    aria-label="Example icon-button with share icon" 
+    style="background-color: transparent; color: white"
+    disabled>
+        <mat-icon style="color:transparent" >settings</mat-icon>
+      </button>
+
+      <div class="header">
+        <!-- {{title}} -->
+      </div>
+      <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" style="background-color: transparent; color: #373736;">
+        <mat-icon>favorite</mat-icon>
+      </button>
+    <span class="example-spacer"></span>
+    <div class="header-title"*ngIf="onSettingsScreen">Settings</div> 
+    <div class="header-title"*ngIf="onLoginScreen"></div>  -->
+    <span class="example-spacer"></span>
+    <button 
+    mat-icon-button class="example-icon favorite-icon" 
+    aria-label="Example icon-button with heart icon" 
+    style="background-color: transparent; color: white"
+    [routerLink]="['/policy']">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" style="background-color: transparent; color: white" [routerLink]="['/login']" (click)="onLoginScreenClick()" >
+      <mat-icon>home</mat-icon>
+    </button>
+    <!-- Theme-toggle btn goes here -->
+    
+      <!-- <mat-icon style="margin-left: 5px; margin-right: 6px;">brightness_5</mat-icon>
+      <mat-slide-toggle [formControl]="toggleControl"></mat-slide-toggle>
+    <mat-icon style="margin-left: 6px;">bedtime</mat-icon> -->
+    
+    
+  </mat-toolbar>
+  

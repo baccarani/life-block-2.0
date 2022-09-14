@@ -1,0 +1,26 @@
+.mat-success {
+  background-color: white;
+  color: #202020;
+  width: 90%;
+}
+
+mat-card {
+  background-color: #202020;
+  color: white;
+  border-radius: 25px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: white !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: white !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: white !important;
+}

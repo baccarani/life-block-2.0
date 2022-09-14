@@ -1,0 +1,77 @@
+body {
+    background-color: #202020 !important;
+  }
+  
+  
+  
+  
+  h2 {
+      vertical-align: top;
+      font-weight: bold;
+      color: #373736;
+      font-size: 28px;
+      text-align: center;
+  }
+  
+  .mat-success {
+      background-color: white;
+      color: #202020;
+      width: 100%;
+      font-weight: bold;
+  }
+  
+  .logo-icon {
+    background-position: center;
+    background-size: cover;
+    background-color: #202020;
+    border: none;
+  }
+  
+  .logo {
+    display: grid;
+    height: 25vh;
+    margin: 0px;
+    grid-template-rows: auto auto;
+    background-size: cover;
+    border-radius: 25px 25px 0px 0px;
+    background-position: center;
+    /* background-image: url(../../assets/img/lifeblock-logo.svg); */
+    background-position: center;
+    background-size: cover;
+    background-color: #202020;
+  }
+  
+  .container {
+    display: grid;
+    height: 70vh;
+    margin: 0px;
+    background-color: #373736;
+    background-size: cover;
+    border-radius: 35px 35px 0px 0px;
+  }
+  
+  
+  .connect-your-wallet {
+    vertical-align: top;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    top: 50px;
+    position: relative;
+  }
+
+
+  .sub-title {
+    color: white;
+    padding: 25px;
+
+  }
+
+
+  img.animated-gif{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+
+
+  }

@@ -1,0 +1,102 @@
+body {
+    background-color: #202020 !important;
+
+}
+
+.logo-icon {
+    background-position: center;
+    background-size: cover;
+    background-color: #202020;
+    border: none;
+
+}
+
+.logo {
+    display: grid;
+    height: 25vh;
+    margin: 0px;
+    grid-template-rows: auto auto;
+    background-size: cover;
+    border-radius: 25px 25px 0px 0px;
+    background-position: center;
+
+    /* background-image: url(../../assets/img/lifeblock-logo.svg); */
+    background-position: center;
+    background-size: cover;
+    background-color: #202020;
+
+}
+
+.container {
+    display: grid;
+    /* height: 70vh; */
+    margin: 0px;
+    background-color: #373736;
+    background-size: cover;
+    border-radius: 35px 35px 0px 0px;
+  }
+
+
+.connect-your-wallet {
+    vertical-align: top;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    top: 50px;
+    position: relative;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+
+.metamask-button {
+    background-color: transparent;
+    border: none;
+    top: -80px;
+    position: relative;
+}
+
+.metamask-button:hover {
+    background-color: lightgrey;
+  }
+
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .policyForm {
+    padding: 25px;
+  }
+
+
+
+  .mat-success {
+    background-color: white;
+    color: #202020;
+    width: 100%;
+}
+
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: white !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: white !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: white !important;
+}
+
+.not-empty-select.mat-selected {
+  color: white !important;
+}
+
+:host /deep/ .mat-select-value-text {
+  color: white !important;
+}

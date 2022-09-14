@@ -1,0 +1,40 @@
+<body>
+    <mat-card [routerLink]="['/profile']" class="user">
+        <mat-card-header>
+            <img src="../../assets/img/avatar.png" mat-card-avatar>
+            <mat-card-title>John Doe</mat-card-title>
+            <mat-card-subtitle style="color: white">Name, phone & email</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+
+    <br>
+
+    <a [routerLink]="['/admin']" class="settings">
+        Admin
+        <mat-icon style="float: right;">keyboard_arrow_right</mat-icon>
+    </a><br>
+
+    <a [routerLink]="['/policy']" class="settings">
+        Policy
+        <mat-icon style="float: right;">keyboard_arrow_right</mat-icon>
+    </a><br>
+
+    <a [routerLink]="['/beneficiary']" class="settings">
+        Beneficiary
+        <mat-icon style="float: right;">keyboard_arrow_right</mat-icon>
+    </a><br>
+
+    <a [routerLink]="['/report']" class="settings">
+        Death Certificate
+        <mat-icon style="float: right;">keyboard_arrow_right</mat-icon>
+    </a><br>
+
+    <a [routerLink]="['/death-benefit']" class="settings">
+        Death Benefit
+        <mat-icon style="float: right;">keyboard_arrow_right</mat-icon>
+    </a><br>
+
+    <a class="settings" style="color: red;" [routerLink]="['/login']" class="settings" (click)="onLoginScreenClick()">
+        Log out
+    </a>
+</body>

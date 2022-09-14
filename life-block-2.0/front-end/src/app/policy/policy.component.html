@@ -1,0 +1,75 @@
+<body>
+    <div class="logo">
+        <button class="logo-icon" (click)="onHomePage()" [routerLink]="['/login']"><img
+                src="../../assets/img/lifeblock-logo.svg" /></button>
+    </div>
+    <div class="container">
+        <div class="connect-your-wallet mat-title">
+            Create your decentralized life insurance policy via the blockchain.
+          </div> <br>
+        <div class="policyForm">
+            <form [formGroup]="policyForm">
+                <mat-form-field style="color: white;" appearance="standard">
+                    <mat-label style="color: white;" >First name</mat-label>
+                    <input style="color: white;" matInput formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field appearance="standard">
+                    <mat-label style="color: white;">Last name</mat-label>
+                    <input style="color: white;" matInput formControlName="lastName">
+                </mat-form-field>
+                <mat-form-field appearance="standard">
+                    <mat-label style="color: white;">Social Insurance Number (SIN)</mat-label>
+                    <input style="color: white;" matInput formControlName="sin">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label style="color: white;">Date of birth</mat-label>
+                    <input style="color: white;" matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+                    <mat-hint style="color: white;">MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle style="color: white;" matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker style="color: white;" #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field appearance="standard">
+                    <mat-label style="color: white;">Street Address</mat-label>
+                    <input style="color: white;" matInput formControlName="streetAddress">
+                </mat-form-field>
+                <mat-form-field appearance="standard">
+                    <mat-label style="color: white;">City</mat-label>
+                    <input style="color: white;" matInput formControlName="city">
+                </mat-form-field>
+                <mat-form-field appearance="standard">
+                    <mat-label style="color: white;">Province</mat-label>
+                    <input style="color: white;" matInput formControlName="province">
+                </mat-form-field>
+                <mat-form-field appearance="standard">
+                    <mat-label style="color: white;">Country</mat-label>
+                    <input style="color: white;" matInput formControlName="country">
+                </mat-form-field>
+                <mat-form-field appearance="standard">
+                    <mat-label style="color: white;">Postal Code</mat-label>
+                    <input style="color: white;" matInput formControlName="postalCode">
+                </mat-form-field>
+                <mat-form-field appearance="standard">
+                    <mat-label style="color: white;">Email Address</mat-label>
+                    <input style="color: white;" matInput formControlName="emailAddress">
+                </mat-form-field>
+                <mat-form-field appearance="standard">
+                    <mat-label style="color: white;">Initial Premium Payment</mat-label>
+                    <input style="color: white;" matInput formControlName="initialPremiumPayment" id="amount" name="amount">
+                </mat-form-field>
+                <!-- <mat-form-field appearance="standard">
+                    <mat-label style="color: white;">Phone Number</mat-label>
+                    <input style="color: white;" matInput formControlName="postalCode">
+                </mat-form-field> -->
+                <button 
+                [disabled]="isLoading" 
+                mat-button color="success" 
+                type="submit" 
+                class="hover-class" 
+                (click)="onSubmit()"
+                [routerLink]="['/beneficiary']"
+                >
+                    <img *ngIf="isLoading" width="20px" src="../../assets/img/spinner.gif" />Next</button>
+            </form>
+        </div>
+    </div>
+</body>

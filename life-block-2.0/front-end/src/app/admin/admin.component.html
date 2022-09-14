@@ -1,0 +1,79 @@
+<body>
+    <div class="logo">
+        <button class="logo-icon" [routerLink]="['/login']"><img src="../../assets/img/lifeblock-logo.svg" /></button>
+    </div>
+    <div class="container" style="padding: 25px">
+        <!-- <div style="margin-bottom: 20px;">
+            <mat-card>
+                <mat-card-header>
+                    <img src="../../assets/img/avatar.png" mat-card-avatar>
+                    <mat-card-title>John Doe</mat-card-title>
+                    <mat-card-subtitle> Heart Disease | Natural Casuse | </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content> -->
+                    <!-- <img src="../../assets/img/avatar.png" mat-card-md-image> -->
+                <!-- </mat-card-content>
+                <mat-card-footer style="padding-left: 25px;">
+                    <mat-card-actions>
+                        <button mat-button  style="background-color: #202020; color:white;">VIEW</button>
+                        <button mat-button>APPROVE</button>
+                    </mat-card-actions>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <mat-card>
+                <mat-card-header>
+                    <img src="../../assets/img/avatar.png" mat-card-avatar>
+                    <mat-card-title>John Doe</mat-card-title>
+                    <mat-card-subtitle> Heart Disease | Natural Casuse | </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content> -->
+                    <!-- <img src="../../assets/img/avatar.png" mat-card-md-image> -->
+                <!-- </mat-card-content>
+                <mat-card-footer style="padding-left: 25px;">
+                    <mat-card-actions>
+                        <button mat-button  style="background-color: #202020; color:white;">VIEW</button>
+                        <button mat-button>APPROVE</button>
+                    </mat-card-actions>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <mat-card>
+                <mat-card-header>
+                    <img src="../../assets/img/avatar.png" mat-card-avatar>
+                    <mat-card-title>John Doe</mat-card-title>
+                    <mat-card-subtitle> Heart Disease | Natural Casuse | </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content> -->
+                    <!-- <img src="../../assets/img/avatar.png" mat-card-md-image> -->
+                <!-- </mat-card-content>
+                <mat-card-footer style="padding-left: 25px;">
+                    <mat-card-actions>
+                        <button mat-button  style="background-color: #202020; color:white;">VIEW</button>
+                        <button mat-button>APPROVE</button>
+                    </mat-card-actions>
+                </mat-card-footer>
+            </mat-card>
+        </div> -->
+        <div *ngFor="let person of people;">
+            <mat-card>
+                <mat-card-header>
+                    <img src="../../assets/img/avatar.png" mat-card-avatar>
+                    <mat-card-title>{{ person.firstName }} {{ person.lastName }}</mat-card-title>
+                    <mat-card-subtitle> {{ person.medicalCauseOfDeath }} | {{ person.meansOfDeath }} | {{ person.dateOfDeath }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <!-- <img src="../../assets/img/avatar.png" mat-card-image> -->
+                </mat-card-content>
+                <mat-card-footer style="padding-left: 25px;">
+                    <mat-card-actions>
+                        <button mat-button>VIEW DETAILS</button>
+                        <!-- <button mat-button (click)="onApprove()">APPROVE</button> -->
+                    </mat-card-actions>
+                </mat-card-footer>
+            </mat-card><br>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,20 @@
+<body>
+    <div class="logo">
+        <button class="logo-icon" [routerLink]="['/login']"><img src="../../assets/img/lifeblock-logo.svg" /></button>
+    </div>
+    <div class="container">
+        <div class="connect-your-wallet mat-title" style="height: 5vh">
+            Redeem your death benefit payment.
+        </div><br><br>
+        <img class="animated-gif" src="../../assets/img/ethereum-spinning.gif" />
+        <div style="padding: 25px;">
+            <button [disabled]="isLoading" mat-button color="success" type="submit" class="hover-class"
+                (click)="onRedeemDeathBenefitPayment()">
+                <img *ngIf="isLoading" width="20px" src="../../assets/img/spinner.gif" />REDEEM</button>
+        </div>
+        <div class="sub-title">
+            <p style="font-weight: bold;">Note:</p>
+            <p style="font-style: italic;">Your Soulbound Token (SBT) will be used to redeem your death benefit payment and burned afterwards.</p>
+        </div>
+    </div>
+</body>

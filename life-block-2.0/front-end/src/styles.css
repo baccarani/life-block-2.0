@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-dialog-container{
+    background-color: #373736 !important;
+    color: white !important;
+}
+
+.green-snackbar {
+    background: green;
+    color: white;
+  }
+  
+  .red-snackbar {
+    background: red;
+    color: white;
+  }
+
+  div.mat-simple-snackbar-action {
+    color: white !important;
+  }

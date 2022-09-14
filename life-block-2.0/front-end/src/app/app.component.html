@@ -1,0 +1,10 @@
+<div>
+  <app-header [title]="title" (ToggleValue)="handleValue($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <router-outlet (activate)="getHeader()"></router-outlet>
+    </div>
+  </div>
+</div>
+</div>

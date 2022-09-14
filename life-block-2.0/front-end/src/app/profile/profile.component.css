@@ -1,0 +1,54 @@
+body {
+  background-color: #202020;
+  background-size: cover;
+  margin:0;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+  
+
+
+.logo-icon {
+    background-position: center;
+    background-size: cover;
+    background-color: #373736;
+    border: none;
+  }
+  
+  .logo {
+    display: grid;
+    height: 20vh;
+    margin: 0px;
+    grid-template-rows: auto auto;
+    background-size: cover;
+    border-radius: 25px 25px 0px 0px;
+    background-position: center;
+    /* background-image: url(../../assets/img/decentrelife-logo.svg); */
+    background-position: center;
+    background-size: cover;
+    background-color: #373736;
+  }
+
+
+
+  .container {
+    display: grid;
+    height: 70vh;
+    margin: 0px;
+    background-color: white;
+    background-size: cover;
+    border-radius: 25px 25px 0px 0px;
+  }
+  
+
+
+  .settings {
+    background-color: #373736;
+    display: block;
+    padding: 25px;
+    text-decoration: none;
+    color: black;
+    border-color: black;
+    /* font-weight: bold; */
+}
