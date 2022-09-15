@@ -13,7 +13,6 @@ import policy from '../policy';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-  public manager: any;
   public medicalCauseOfDeaths = ['Heart Disease', 'Cancer', 'COVID-19', 'Accidents', 'Drowning'];
   public meansOfDeaths = ['Natural Cause', 'Accident', 'Homicide', 'Suicide', 'Undetermined'];
   public isLoading = false;
@@ -21,7 +20,7 @@ export class ReportComponent implements OnInit {
   public isError = false;
   public reportStruct: any;
   public reportCount: any;
-  public beneficiaryAddress = '0x519b72B7E5658dD236E1ed55a687D9f1118d1a60' ;
+  public beneficiaryAddress = '0xF93224494442A31DB3b493b5F08D09A1B18Ac652';
   public uri = 'https://gateway.pinata.cloud/ipfs/QmayWkZY6fPvEMGDhheYdCjEC5kpXTTsUGw4jZEboYKpay';
   deathForm = this.formBuilder.group({
     firstName: [''],
@@ -44,26 +43,28 @@ export class ReportComponent implements OnInit {
   }
 
   async ngAfterContentInit() {
-    this.manager = await report.methods.manager().call();
     this.reportStruct = await report.methods.getReports().call();
-    this.reportCount =  await report.methods.getReportsCount().call();
+    this.reportCount = await report.methods.getReportsCount().call();
 
   }
 
   onSubmit = async () => {
-    
     // start disabled button loading spinner
     this.isLoading = true;
 
+    // get users ethereum address
+    await (window as any).ethereum.enable();
+    const accounts = await (window as any).ethereum.request({ method: 'eth_requestAccounts' });
+
     // create death certificate report
-    await report.methods.createReport(this.manager, this.deathForm.value.firstName, this.deathForm.value.lastName, this.deathForm.value.sin, this.deathForm.value.dateOfDeath, this.deathForm.value.city, this.deathForm.value.postalCode, this.deathForm.value.country, this.deathForm.value.province, this.deathForm.value.medicalCauseOfDeaths, this.deathForm.value.meansOfDeaths).send({ from: this.manager });
-    
+    await report.methods.createReport(accounts[0], this.deathForm.value.firstName, this.deathForm.value.lastName, this.deathForm.value.sin, this.deathForm.value.dateOfDeath, this.deathForm.value.city, this.deathForm.value.postalCode, this.deathForm.value.country, this.deathForm.value.province, this.deathForm.value.medicalCauseOfDeaths, this.deathForm.value.meansOfDeaths).send({ from: accounts[0] });
+
     // end disabled button loading spinner
     this.isLoading = false;
 
     if (this.deathForm.controls['meansOfDeaths'].value != 'Undetermined') {
       this.openSuccessSnackBar();
-      await certificate.methods.safeMint(this.beneficiaryAddress, this.uri).send({ from: this.manager });
+      await certificate.methods.safeMint(this.beneficiaryAddress, this.uri).send({ from: accounts[0] });
     } else {
       this.openErrorSnackBar();
     }
@@ -74,14 +75,14 @@ export class ReportComponent implements OnInit {
     this.snackBar.open('Soulbound Token (SBT) has been sent to beneficiaries.', 'OK', {
       duration: 15000,
       panelClass: ['green-snackbar', 'login-snackbar'],
-     });
+    });
   }
 
   openErrorSnackBar() {
     this.snackBar.open('Soulbound Token (SBT) has not been sent to beneficiaries, as the Means of Death was Undetermined.', 'OK', {
       duration: 15000,
       panelClass: ['red-snackbar', 'login-snackbar'],
-     });
+    });
   }
 
 

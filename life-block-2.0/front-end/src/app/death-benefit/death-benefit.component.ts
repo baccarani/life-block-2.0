@@ -29,7 +29,7 @@ export class DeathBenefitComponent implements OnInit {
 
 
     // burn SBT
-    await certificate.methods.burn(2).send({ from: accounts[0] }, function (err: any, res: any) {
+    await certificate.methods.burn(1).send({ from: accounts[0] }, function (err: any, res: any) {
       if (err) {
         console.log("An error occured", err)
         return
@@ -39,7 +39,7 @@ export class DeathBenefitComponent implements OnInit {
 
 
     // pay beneficiaries
-    await policy.methods.withdrawAll('0x519b72B7E5658dD236E1ed55a687D9f1118d1a60').send({ from: accounts[0] });
+    await policy.methods.withdrawAll('0xF93224494442A31DB3b493b5F08D09A1B18Ac652').send({ from: accounts[0] });
 
 
     // end loading spinner

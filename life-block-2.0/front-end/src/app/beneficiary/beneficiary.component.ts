@@ -98,6 +98,7 @@ export class BeneficiaryComponent implements OnInit {
     await (window as any).ethereum.enable();
     const accounts = await (window as any).ethereum.request({ method: 'eth_requestAccounts' });
 
+    // enter ether into policy smart contract and create smart contract policy
     await policy.methods.enter().send({ from: accounts[0], value: web3.utils.toWei(policyInfo.initialPremiumPayment) }, async function (err: any, res: any) {
       if (err) {
         console.log("an error occured while depositing funds.");

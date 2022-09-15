@@ -10,8 +10,6 @@ import certificate from '../certificate';
 })
 export class AdminComponent implements OnInit {
   public manager: any;
-  public beneficiaryAddress = '0x519b72B7E5658dD236E1ed55a687D9f1118d1a60' ;
-  public uri = 'https://gateway.pinata.cloud/ipfs/QmayWkZY6fPvEMGDhheYdCjEC5kpXTTsUGw4jZEboYKpay'
   personCount = '';
   people: any[] = [];
 
@@ -64,7 +62,6 @@ export class AdminComponent implements OnInit {
   }
 
   async onApprove() {
-    await certificate.methods.safeMint(this.beneficiaryAddress, this.uri).send({ from: this.manager });
 
   }
 
