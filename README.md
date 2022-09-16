@@ -9,6 +9,9 @@ A Blockchain Framework for Parametric Insurance, Implemented using Soulbound Tok
 
 </p>
 
+^ YouTube Video Link - https://youtu.be/wfkw7UVAaTY
+
+<hr>
 
 Life Block is an Ethereum-based Decentralized Application (DApp) leveraging blockchain technology to enhance the insurance premium pricing and claims handling processes, using pre-specified payouts based upon a trigger event (aka, parametric insurance).
 
