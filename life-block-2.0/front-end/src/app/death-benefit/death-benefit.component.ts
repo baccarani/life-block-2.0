@@ -42,7 +42,7 @@ export class DeathBenefitComponent implements OnInit {
     });
 
     // update burnCounter
-    this.burnCounter = this.burnCounter + 1;
+    // this.burnCounter = this.burnCounter + 1;
 
 
     // pay beneficiaries
