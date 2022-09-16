@@ -12,7 +12,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 export class DeathBenefitComponent implements OnInit {
   public isLoading = false;
   public manager: any;
-  public burnCounter: number = 12;
+  public burnCounter: number = 13;
 
 
   constructor(private snackBar: MatSnackBar) { }
