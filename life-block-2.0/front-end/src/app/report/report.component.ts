@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, NgForm } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import report from '../report';
 import certificate from '../certificate';
-import web3 from '../web3';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import policy from '../policy';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -59,20 +57,22 @@ export class ReportComponent implements OnInit {
     // create death certificate report
     await report.methods.createReport(accounts[0], this.deathForm.value.firstName, this.deathForm.value.lastName, this.deathForm.value.sin, this.deathForm.value.dateOfDeath, this.deathForm.value.city, this.deathForm.value.postalCode, this.deathForm.value.country, this.deathForm.value.province, this.deathForm.value.medicalCauseOfDeaths, this.deathForm.value.meansOfDeaths).send({ from: accounts[0] });
 
-    // end disabled button loading spinner
-    this.isLoading = false;
 
+    // mint SBT and display success/error banner
     if (this.deathForm.controls['meansOfDeaths'].value != 'Undetermined') {
-      this.openSuccessSnackBar();
       await certificate.methods.safeMint(this.beneficiaryAddress, this.uri).send({ from: accounts[0] });
+      this.openSuccessSnackBar();
     } else {
       this.openErrorSnackBar();
     }
 
+    // end disabled button loading spinner
+    this.isLoading = false;
+
   }
 
   openSuccessSnackBar() {
-    this.snackBar.open('Soulbound Token (SBT) has been sent to beneficiaries.', 'OK', {
+    this.snackBar.open('Death certificate smart contract has been created, and Soulbound Tokens (SBTs) have been minted to beneficiaries.', 'OK', {
       duration: 15000,
       panelClass: ['green-snackbar', 'login-snackbar'],
     });

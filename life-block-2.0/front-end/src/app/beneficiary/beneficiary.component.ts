@@ -3,7 +3,9 @@ import { Beneficiary } from '../models/beneficiary';
 import policy from '../policy';
 import { FormService } from '../services/form-services';
 import web3 from '../web3';
+import { MatSnackBar } from '@angular/material/snack-bar';
 const BN = require('bn.js');
+
 
 @Component({
   selector: 'app-beneficiary',
@@ -11,10 +13,10 @@ const BN = require('bn.js');
   styleUrls: ['./beneficiary.component.css']
 })
 export class BeneficiaryComponent implements OnInit {
-
+  public isLoading = false;
   beneficiaries: Beneficiary[] = [];
   showEdit: boolean[] = [];
-  constructor(private service: FormService) { }
+  constructor(private service: FormService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.beneficiaries = [{ firstName: "", lastName: "", walletAddress: "", allocation: 0 }];
@@ -61,6 +63,9 @@ export class BeneficiaryComponent implements OnInit {
   }
 
   async onSubmit() {
+    // start disabled button loading spinner
+    this.isLoading = true;
+
     // initialize variables
     let form: any[] = this.service.getFormValue();
     let policyInfo: any = form[0][0];
@@ -114,6 +119,29 @@ export class BeneficiaryComponent implements OnInit {
       }
     });
 
+    // display success message
+    this.openSuccessSnackBar();
+
+
+    // end disabled button loading spinner
+    this.isLoading = false;
+
+  }
+
+
+
+  openSuccessSnackBar() {
+    this.snackBar.open('Initial premium payment has been entered, life insurance smart contract policy has been created.', 'OK', {
+      duration: 15000,
+      panelClass: ['green-snackbar', 'login-snackbar'],
+    });
+  }
+
+  openErrorSnackBar() {
+    this.snackBar.open('Error.', 'OK', {
+      duration: 15000,
+      panelClass: ['red-snackbar', 'login-snackbar'],
+    });
   }
 
 }

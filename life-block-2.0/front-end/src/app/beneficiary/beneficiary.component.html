@@ -21,7 +21,7 @@
       </div>
     </div><br><br><br><br><br><br><br>
     <div style="padding-bottom: 15px;">
-      <button mat-button color="success" type="submit" class="hover-class" (click)="onSubmit()" style="position: fixed; left: 5%; bottom: 2%; color: #202020;">Submit</button>
+      <button [disabled]="isLoading" mat-button color="success" type="submit" class="hover-class" (click)="onSubmit()" style="position: fixed; left: 5%; bottom: 2%;"><img *ngIf="isLoading" width="20px" src="../../assets/img/spinner.gif" />Submit</button>
     </div>
   </div>
 </body>

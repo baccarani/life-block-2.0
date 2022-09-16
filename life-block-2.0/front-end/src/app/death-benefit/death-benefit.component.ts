@@ -12,14 +12,18 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 export class DeathBenefitComponent implements OnInit {
   public isLoading = false;
   public manager: any;
+  public burnCounter: number = 12;
 
 
   constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    // console.log(this.burnCounter)
   }
 
   async onRedeemDeathBenefitPayment() {
+
+    
     // start loading spinner
     this.isLoading = true;
 
@@ -29,13 +33,16 @@ export class DeathBenefitComponent implements OnInit {
 
 
     // burn SBT
-    await certificate.methods.burn(1).send({ from: accounts[0] }, function (err: any, res: any) {
+    await certificate.methods.burn(this.burnCounter).send({ from: accounts[0] }, function (err: any, res: any) {
       if (err) {
         console.log("An error occured", err)
         return
       }
       console.log("Hash of the transaction: " + res)
     });
+
+    // update burnCounter
+    this.burnCounter = this.burnCounter + 1;
 
 
     // pay beneficiaries
