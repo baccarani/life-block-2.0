@@ -24,6 +24,8 @@
     "browser": "^0.2.6",
     "crypto-browserify": "^3.12.0",
     "https-browserify": "^1.0.0",
+    "lottie-web": "^5.9.6",
+    "ngx-lottie": "^9.0.1",
     "ngx-material-timepicker": "^5.5.3",
     "os-browserify": "^0.3.0",
     "rxjs": "~7.5.0",

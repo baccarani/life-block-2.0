@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import certificate from '../certificate';
 import policy from '../policy';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { AnimationOptions } from 'ngx-lottie';
+import { AnimationItem } from 'lottie-web';
 
 
 @Component({
@@ -10,16 +12,31 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
   styleUrls: ['./death-benefit.component.css']
 })
 export class DeathBenefitComponent implements OnInit {
+  public isSuccess = false;
   public isLoading = false;
   public manager: any;
-  public burnCounter: number = 12;
+  public burnCounter: number = 19;
+
+  private animation!: AnimationItem;
 
 
-  constructor(private snackBar: MatSnackBar) { }
+  constructor(private snackBar: MatSnackBar, private ngZone: NgZone) { }
 
   ngOnInit(): void {
     // console.log(this.burnCounter)
   }
+
+
+options:AnimationOptions = {
+  path:'../../assets/img/confetti.json'
+}
+
+
+created(animation:AnimationItem) {
+  console.log(animation);
+  this.animation = animation;
+}
+
 
   async onRedeemDeathBenefitPayment() {
 
@@ -54,6 +71,9 @@ export class DeathBenefitComponent implements OnInit {
 
     // display success message
     this.openSuccessSnackBar();
+
+    // display lottie animation confetti
+    this.isSuccess = true;
     
   }
 

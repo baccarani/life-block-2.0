@@ -36,6 +36,13 @@ import { RouterModule } from '@angular/router';
 import { DeathBenefitComponent } from './death-benefit/death-benefit.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+
+export function playerFactory(){
+  return player
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +81,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSnackBarModule,
     MatSlideToggleModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    LottieModule.forRoot({player:playerFactory}),
   ],
   providers: [HeaderTitleService,FormService],
   bootstrap: [AppComponent]
