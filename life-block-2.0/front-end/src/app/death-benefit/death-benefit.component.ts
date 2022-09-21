@@ -15,15 +15,16 @@ export class DeathBenefitComponent implements OnInit {
   public isSuccess = false;
   public isLoading = false;
   public manager: any;
-  public burnCounter: number = 19;
+  public burnCounter: any;
 
   private animation!: AnimationItem;
 
 
   constructor(private snackBar: MatSnackBar, private ngZone: NgZone) { }
 
-  ngOnInit(): void {
-    // console.log(this.burnCounter)
+  async ngOnInit() {
+    this.burnCounter = await certificate.methods.count().call();
+    this.burnCounter--
   }
 
 
@@ -33,7 +34,6 @@ options:AnimationOptions = {
 
 
 created(animation:AnimationItem) {
-  console.log(animation);
   this.animation = animation;
 }
 
