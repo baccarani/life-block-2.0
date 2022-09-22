@@ -70,8 +70,6 @@ export class BeneficiaryComponent implements OnInit {
     let form: any[] = this.service.getFormValue();
     let policyInfo: any = form[0][0];
     let beneficiaryInfo: any[] = form[1];
-    console.log(policyInfo);
-    console.log(beneficiaryInfo);
     let stringArgs: string[] = [];
     let numberArgs: number[] = [];
     let addressArgs: string[] = [];

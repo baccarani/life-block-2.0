@@ -78,7 +78,7 @@ created(animation:AnimationItem) {
   }
 
   openSuccessSnackBar() {
-    this.snackBar.open('Soulbound Token (SBT) has been burned, and death benefit payment has been sent to beneficiaries.', 'OK', {
+    this.snackBar.open('Soulbound Token (SBT) has been burned, and death benefit payment has been sent to the beneficiary / beneficiaries.', 'OK', {
       duration: 15000,
       panelClass: ['green-snackbar', 'login-snackbar'],
      });

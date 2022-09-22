@@ -72,7 +72,7 @@ export class ReportComponent implements OnInit {
   }
 
   openSuccessSnackBar() {
-    this.snackBar.open('Death certificate smart contract has been created, and Soulbound Tokens (SBTs) have been minted to beneficiaries.', 'OK', {
+    this.snackBar.open('Death certificate smart contract has been created, and Soulbound Tokens (SBTs) have been minted to the beneficiary / beneficiaries.', 'OK', {
       duration: 15000,
       panelClass: ['green-snackbar', 'login-snackbar'],
     });
