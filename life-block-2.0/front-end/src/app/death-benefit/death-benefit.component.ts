@@ -1,7 +1,7 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import certificate from '../certificate';
 import policy from '../policy';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AnimationOptions } from 'ngx-lottie';
 import { AnimationItem } from 'lottie-web';
 
@@ -16,6 +16,7 @@ export class DeathBenefitComponent implements OnInit {
   public isLoading = false;
   public manager: any;
   public burnCounter: any;
+  public policyWalletAddress: any = '0xF93224494442A31DB3b493b5F08D09A1B18Ac652';
 
   private animation!: AnimationItem;
 
@@ -58,12 +59,9 @@ created(animation:AnimationItem) {
       console.log("Hash of the transaction: " + res)
     });
 
-    // update burnCounter
-    // this.burnCounter = this.burnCounter + 1;
-
 
     // pay beneficiaries
-    await policy.methods.withdrawAll('0xF93224494442A31DB3b493b5F08D09A1B18Ac652').send({ from: accounts[0] });
+    await policy.methods.withdrawAll(this.policyWalletAddress).send({ from: accounts[0] });
 
 
     // end loading spinner
