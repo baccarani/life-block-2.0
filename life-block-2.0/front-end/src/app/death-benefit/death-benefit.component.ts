@@ -41,16 +41,19 @@ created(animation:AnimationItem) {
 
   async onRedeemDeathBenefitPayment() {
 
+    // declare audio variables
+    let audio = new Audio();
+    audio.src = '../../assets/img/fireworks.mp3';
     
     // start loading spinner
     this.isLoading = true;
 
-    // get users ethereum address
+    // // get users ethereum address
     await (window as any).ethereum.enable();
     const accounts = await (window as any).ethereum.request({ method: 'eth_requestAccounts' });
 
 
-    // burn SBT
+    // // burn SBT
     await certificate.methods.burn(this.burnCounter).send({ from: accounts[0] }, function (err: any, res: any) {
       if (err) {
         console.log("An error occured", err)
@@ -60,18 +63,22 @@ created(animation:AnimationItem) {
     });
 
 
-    // pay beneficiaries
+    // // pay beneficiaries
     await policy.methods.withdrawAll(this.policyWalletAddress).send({ from: accounts[0] });
 
 
-    // end loading spinner
+    // // end loading spinner
     this.isLoading = false;
 
-    // display success message
+    // // display success message
     this.openSuccessSnackBar();
 
     // display lottie animation confetti
     this.isSuccess = true;
+
+    // play audio sounds
+    audio.load();
+    audio.play();
     
   }
 
