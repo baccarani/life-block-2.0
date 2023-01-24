@@ -63,6 +63,9 @@ export class BeneficiaryComponent implements OnInit {
   }
 
   async onSubmit() {
+    // get policy count
+
+    
     // start disabled button loading spinner
     this.isLoading = true;
 
@@ -87,7 +90,7 @@ export class BeneficiaryComponent implements OnInit {
     stringArgs.push(policyInfo.streetAddress);
 
     // add initial premium payment coming from the policy form
-    numberArgs.push(new BN(web3.utils.toWei(policyInfo.initialPremiumPayment)));
+    numberArgs.push(0);
 
     // add string and number arguments coming from the beneficiary info
     for (let i = 0; i < beneficiaryInfo.length; i++) {
@@ -96,6 +99,11 @@ export class BeneficiaryComponent implements OnInit {
       addressArgs.push(beneficiaryInfo[i].walletAddress);
       numberArgs.push(beneficiaryInfo[i].allocation);
     }
+
+    console.log(stringArgs);
+    console.log(addressArgs);
+    console.log(numberArgs);
+
 
     // get users ethereum address
     await (window as any).ethereum.enable();
@@ -107,7 +115,7 @@ export class BeneficiaryComponent implements OnInit {
         console.log("an error occured while depositing funds.");
         return
       } else {
-        await policy.methods.createPolicy(stringArgs, numberArgs, addressArgs).send({ from: accounts[0] }, function (err: any, res: any) {
+        await policy.methods.createPolicy(stringArgs, numberArgs, addressArgs).send({ from: accounts[0] }, async function (err: any, res: any) {
           if (err) {
             console.log("An error occured", err)
             return
@@ -129,7 +137,7 @@ export class BeneficiaryComponent implements OnInit {
 
 
   openSuccessSnackBar() {
-    this.snackBar.open('Initial premium payment has been entered, life insurance smart contract policy has been created.', 'OK', {
+    this.snackBar.open('Initial premium payment has been entered, life insurance policy has been created.', 'OK', {
       duration: 15000,
       panelClass: ['green-snackbar', 'login-snackbar'],
     });

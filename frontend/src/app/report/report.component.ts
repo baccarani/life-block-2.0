@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import report from '../report';
 import certificate from '../certificate';
+import policy from '../policy';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 
@@ -18,7 +19,6 @@ export class ReportComponent implements OnInit {
   public isError = false;
   public reportStruct: any;
   public reportCount: any;
-  public beneficiaryAddress = '0xF93224494442A31DB3b493b5F08D09A1B18Ac652';
   public uri = 'https://gateway.pinata.cloud/ipfs/QmayWkZY6fPvEMGDhheYdCjEC5kpXTTsUGw4jZEboYKpay';
   deathForm = this.formBuilder.group({
     firstName: [''],
@@ -43,28 +43,43 @@ export class ReportComponent implements OnInit {
   async ngAfterContentInit() {
     this.reportStruct = await report.methods.getReports().call();
     this.reportCount = await report.methods.getReportsCount().call();
-
-  }
+ }
 
   onSubmit = async () => {
     // start disabled button loading spinner
     this.isLoading = true;
 
+
+    // get policy by attruibute
+    const getPolicyByAttribute_ = await policy.methods.getPolicyByAttribute(this.deathForm.value.firstName, this.deathForm.value.lastName, this.deathForm.value.sin).call();
+
+
     // get users ethereum address
     await (window as any).ethereum.enable();
     const accounts = await (window as any).ethereum.request({ method: 'eth_requestAccounts' });
+
+
 
     // create death certificate report
     await report.methods.createReport(accounts[0], this.deathForm.value.firstName, this.deathForm.value.lastName, this.deathForm.value.sin, this.deathForm.value.dateOfDeath, this.deathForm.value.city, this.deathForm.value.postalCode, this.deathForm.value.country, this.deathForm.value.province, this.deathForm.value.medicalCauseOfDeaths, this.deathForm.value.meansOfDeaths).send({ from: accounts[0] });
 
 
     // mint SBT and display success/error banner
-    if (this.deathForm.controls['meansOfDeaths'].value != 'Undetermined') {
-      await certificate.methods.safeMint(this.beneficiaryAddress, this.uri).send({ from: accounts[0] });
-      this.openSuccessSnackBar();
-    } else {
-      this.openErrorSnackBar();
+    for(var i = 0; i < getPolicyByAttribute_.beneficiaries.length; i++) {
+      if (this.deathForm.controls['meansOfDeaths'].value != 'Undetermined') {
+        const beneficiaryAddress = getPolicyByAttribute_.beneficiaries[i].recipient;
+
+        await certificate.methods.safeMint(beneficiaryAddress, this.uri).send({ from: accounts[0] });
+
+      } else {
+        this.openErrorSnackBar();
+      }
     }
+
+    // success banner
+    this.openSuccessSnackBar();
+
+   
 
     // end disabled button loading spinner
     this.isLoading = false;

@@ -99,8 +99,8 @@ contract Policy {
     }
 
 
-    function withdrawAll(address payable _to) public {
-        _to.transfer(address(this).balance);
+    function withdrawAll(address payable _to, uint allocation) public {
+        _to.transfer(address(this).balance * allocation);
     }
 
 

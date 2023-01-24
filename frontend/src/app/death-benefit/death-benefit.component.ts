@@ -64,7 +64,7 @@ created(animation:AnimationItem) {
 
 
     // pay beneficiaries
-    await policy.methods.withdrawAll(this.policyWalletAddress).send({ from: accounts[0] });
+    await policy.methods.withdrawAll(this.policyWalletAddress, ).send({ from: accounts[0] });
 
 
     // end loading spinner
