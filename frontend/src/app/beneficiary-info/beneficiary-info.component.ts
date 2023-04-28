@@ -59,7 +59,6 @@ export class BeneficiaryInfoComponent implements OnInit, OnChanges {
   }
 
   deleteClicked(): void {
-    console.log(this.index);
     this.deleteUpdate.emit(this.index);
   }
 

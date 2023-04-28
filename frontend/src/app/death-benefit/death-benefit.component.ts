@@ -74,16 +74,16 @@ created(animation:AnimationItem) {
     this.openSuccessSnackBar();
 
     // display lottie animation confetti
-    this.isSuccess = true;
+    // this.isSuccess = true;
 
     // play audio sounds
-    audioFireWorks.load();
-    audioFireWorks.play();
+    // audioFireWorks.load();
+    // audioFireWorks.play();
 
-    setTimeout(()=>{                           
-      audioFireWorks.pause();
-      audioFireWorks.currentTime = 0;
-  }, 25000);
+  //   setTimeout(()=>{                           
+  //     audioFireWorks.pause();
+  //     audioFireWorks.currentTime = 0;
+  // }, 25000);
     
   }
 
