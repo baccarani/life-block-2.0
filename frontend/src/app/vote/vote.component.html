@@ -1,0 +1,14 @@
+<body>
+    <div class="logo">
+        <button class="logo-icon" [routerLink]="['/login']"><img src="../../assets/img/zk-vote-logo.svg" /></button>
+    </div>
+    <div class="container">
+        <div class="connect-your-wallet mat-title" style="height: 5vh">
+            Select who you want to vote for.
+        </div><br>
+        <div style="display: flex; justify-content: center; align-items: center;" class="button-container">
+            <button (click)="submitVote('A')">Vote A</button>
+            <button (click)="submitVote('B')">Vote B</button>
+          </div>          
+    </div>
+</body>

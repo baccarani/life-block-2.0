@@ -1,5 +1,5 @@
 body {
-    background-color: #202020 !important;
+    background-color: #F0F0F0 !important;
 
 }
 
@@ -16,14 +16,14 @@ body {
     /* background-image: url(../../assets/img/lifeblock-logo-login.svg); */
     background-position: center;
     background-size: cover;
-    background-color: #202020;
+    background-color: #F0F0F0;
 
 }
 
 .logo-icon {
     background-position: center;
     background-size: cover;
-    background-color: #202020;
+    background-color: #F0F0F0;
     border: none;
   }
   
@@ -32,7 +32,7 @@ body {
     display: grid;
     height: 50vh;
     margin: 0px;
-    background-color: #373736; 
+    background-color: white; 
     background-size: cover;
     border-radius: 35px 35px 0px 0px;
 }
@@ -41,7 +41,7 @@ body {
 .connect-your-wallet {
     vertical-align: top;
     font-weight: bold;
-    color: white;
+    color: black;
     font-size: 28px;
     text-align: center;
     top: 50px;

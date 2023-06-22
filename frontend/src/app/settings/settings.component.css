@@ -1,5 +1,5 @@
 body {
-  background-color: #202020;
+  background-color: #F0F0F0;
   background-size: cover;
   margin:0;
   min-height: 100vh;
@@ -8,22 +8,20 @@ body {
 }
 
 .user {
-  background-color: #373736;
+  background-color: white;
   display: block;
   padding: 25px;
   text-decoration: none;
-  color: white;
-  border-color: black;
+  color: black;
   /* font-weight: bold; */
 }
 
 .settings {
-    background-color: #373736;
+    background-color: white;
     display: block;
     padding: 25px;
     text-decoration: none;
-    color: white;
-    border-color: black;
+    color: black;
     /* font-weight: bold; */
 }
 

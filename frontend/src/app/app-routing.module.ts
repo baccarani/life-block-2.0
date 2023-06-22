@@ -8,6 +8,7 @@ import { PolicyComponent } from './policy/policy.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ReportComponent } from './report/report.component';
 import { SettingsComponent } from './settings/settings.component';
+import { VoteComponent } from './vote/vote.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'beneficiary', component: BeneficiaryComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'death-benefit', component: DeathBenefitComponent },
+  { path: 'vote', component: VoteComponent },
 ];
 
 @NgModule({

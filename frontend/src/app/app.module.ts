@@ -38,6 +38,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
+import { VoteComponent } from './vote/vote.component';
 
 export function playerFactory(){
   return player
@@ -56,7 +57,8 @@ export function playerFactory(){
     BeneficiaryComponent,
     ProfileComponent,
     PolicyModalComponent,
-    DeathBenefitComponent
+    DeathBenefitComponent,
+    VoteComponent
     
   ],
   imports: [
