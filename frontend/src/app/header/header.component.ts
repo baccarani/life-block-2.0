@@ -1,6 +1,5 @@
 import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
-import { HeaderTitleService } from '../services/header-title.service';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
    toggleControl = new FormControl(false);
 
-  constructor(private headerTitleService: HeaderTitleService,private fb:FormBuilder) {
+  constructor(private fb:FormBuilder) {
    }
 
   // get formValue():FormControl {

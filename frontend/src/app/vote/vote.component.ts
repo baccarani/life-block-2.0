@@ -12,6 +12,7 @@ export class VoteComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitVote(vote: string) {}
-
+  submitVote(vote: string) {
+    alert(vote);
+  }
 }
