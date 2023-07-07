@@ -12,19 +12,19 @@
 // // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // // hue. Available color palettes: https://material.io/design/color/
-// $decenterlife-primary: mat.define-palette(mat.$indigo-palette,500);
-// $decenterlife-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// $life-block-primary: mat.define-palette(mat.$indigo-palette,500);
+// $life-block-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // // The warn palette is optional (defaults to red).
-// $decenterlife-warn: mat.define-palette(mat.$red-palette);
+// $life-block-warn: mat.define-palette(mat.$red-palette);
 
 // // Create the theme object. A theme consists of configurations for individual
 // // theming systems such as "color" or "typography".
-// $decenterlife-theme: mat.define-light-theme((
+// $life-block-theme: mat.define-light-theme((
 //   color: (
-//     primary: $decenterlife-primary,
-//     accent: $decenterlife-accent,
-//     warn: $decenterlife-warn,
+//     primary: $life-block-primary,
+//     accent: $life-block-accent,
+//     warn: $life-block-warn,
 //   )
 // ));
 
@@ -32,7 +32,7 @@
 // // Alternatively, you can import and @include the theme mixins for each component
 // // that you are using.
 // .lightMode{
-// @include mat.all-component-themes($decenterlife-theme);
+// @include mat.all-component-themes($life-block-theme);
 
 // }   
 

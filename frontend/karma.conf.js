@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/decenterlife'),
+      dir: require('path').join(__dirname, './coverage/life-block'),
       subdir: '.',
       reporters: [
         { type: 'html' },
