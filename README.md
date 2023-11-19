@@ -9,7 +9,7 @@ A Blockchain Framework for Parametric Insurance, Implemented using Soulbound Tok
 
 </p>
 
-^ YouTube Video Link - https://youtu.be/wfkw7UVAaTY
+YouTube Video Link - https://youtu.be/wfkw7UVAaTY
 
 <hr>
 
